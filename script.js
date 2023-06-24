@@ -76,7 +76,7 @@ async function fetchUserWeatherInfo(coordinates){
 
 	// API Call
 	try{
-		const response=await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
+		const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
 		const data=await response.json()
 		loading.classList.remove("active")
 	    infoContainer.classList.add("active")
@@ -108,7 +108,7 @@ function renderWeatherInfo(data){
     city_name.innerText=data?.name
 	countryIcon.src = `https://flagcdn.com/144x108/${data?.sys?.country.toLowerCase()}.png`;
 	desc.innerText=data?.weather?.[0]?.description
-	weatherIcon.src = `http://openweathermap.org/img/w/${data?.weather?.[0]?.icon}.png`;
+	weatherIcon.src = `https://openweathermap.org/img/w/${data?.weather?.[0]?.icon}.png`;
 	console.log(weatherIcon)
 	temp.innerText=`${data?.main?.temp}°C`
 	speed.innerText=`${data?.wind?.speed}m/s`
@@ -160,7 +160,7 @@ async function fetchSearchWeatherInfo(cityName){
 	errorPage.classList.remove("active")
 	loading.classList.add("remove")
 	try{
-	  const response=await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`)
+	  const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`)
 	  const data=await response.json()
 	  console.log(data?.cod)
 	  if(data?.cod==='404'){
