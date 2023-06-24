@@ -144,6 +144,8 @@ const searchInput=document.querySelector("[dataSearchInput]")
 searchForm.addEventListener('submit',(e)=>{
    e.preventDefault()
    let cityName=searchInput.value
+    infoContainer.classList.remove("active")
+    errorPage.classList.remove("active")
    if(cityName===""){
 	window.alert("Enter the name of city\neg-Delhi")
 	return
