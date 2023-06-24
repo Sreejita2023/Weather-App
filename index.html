@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./assets/fav.gif" type="image/x-icon">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <!-- heading of the app -->
+        <h1>Weather App</h1>
+
+        <!-- navigation bar -->
+        <div class="nav_bar">
+            <p class="tab" id="current" userTab>Your Weather</p>
+            <p class="tab" id="location" searchTab>Search Weather</p>
+        </div>
+        
+        <div class="weather_container">
+              <!-- data_search_bar -->
+             <form class="search_bar" dataSearchForm>
+                 <input placeholder="Search for City..." id="search" dataSearchInput>
+                 <button class="btn" type="submit" ><img src="./assets/search.png" width="20" height="20"></button>
+             </form>
+         
+                 <!-- grant location -->
+             <div class="sub-container grant_location">
+                 <img src="./assets/location.png" alt="location" width="80" height="80" loading="lazy">
+                 <p>Grant Location Access</p>
+                 <p>Allow Acess To Weather Information</p>
+                 <button class="btn" grantaccess>Grant Acess</button>
+             </div>
+         
+     
+                 <!-- loading screen container -->
+             <div class="sub-container loadingScreen">
+                 <img src="./assets/loading.gif" width="150" height="150" alt="">
+                 <p>loading</p>
+             </div>
+         
+     
+                 <div class="sub-container container">
+         
+                     <!-- name of the city -->
+                 <div class="head">
+                     <div id="city" data_city>city_name</div>
+                     <img id="icon" data_country_icon>
+                 </div>
+         
+                     <!-- weather description -->
+                 <p data_weather_desc></p>
+                 <img data_weather_icon>
+         
+                     <!-- temperature -->
+                 <p data_temp></p>
+         
+     
+                     <div class="bar">
+         
+                         <!-- card-1 -->
+                     <div class="box windspeed">
+                         <img src="./assets/wind.png" alt="">
+                         <p>windspeed</p>
+                         <p data_wind></p>
+                     </div>
+         
+                         <!-- card-2 -->
+                     <div class="box humidity">
+                         <img src="./assets/humidity.png" alt="">
+                         <p>humidity</p>
+                         <p data_humidity></p>
+                     </div>
+         
+                         <!-- card-3 -->
+                     <div class="box clouds">
+                         <img src="./assets/cloud.png" alt="">
+                         <p>cloud</p>
+                         <p data_cloud></p>
+                     </div>
+                 </div>
+            </div>
+            <div class="sub-container error">
+                <img src="./assets/not-found.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
